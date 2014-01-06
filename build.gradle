@@ -2,10 +2,16 @@ apply plugin: 'maven'
 apply plugin: 'groovy'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
+
+group = 'com.sysgears.grain'
 version = '0.3.2-SNAPSHOT'
 defaultTasks 'grain'
 
 def compatibilityVersion = 1.5
+ext {
+    mainClassName = [project.group, 'Main'].join('.')
+}
+
 sourceCompatibility = compatibilityVersion
 targetCompatibility = compatibilityVersion
 
@@ -55,7 +61,6 @@ sourceSets {
 }
 
 project.ext {
-    mainClass = 'com.sysgears.grain.Main'
     classpath = sourceSets.main.runtimeClasspath
 }
 
@@ -81,4 +86,11 @@ idea {
     module {
         excludeDirs = ['.cache', '.idea', '.gradle', '.nb-gradle', '.settings', 'bin', 'out', 'target', 'gradle'].collect { file(it) }
     }
+}
+
+task generate(type: JavaExec) {
+    logging.captureStandardOutput LogLevel.INFO
+    classpath sourceSets.main.runtimeClasspath
+    main = mainClassName
+    args name
 }
