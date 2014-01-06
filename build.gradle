@@ -7,9 +7,9 @@ group = 'com.sysgears.grain'
 version = '0.3.2-SNAPSHOT'
 defaultTasks 'grain'
 
-def compatibilityVersion = 1.5
 ext {
     mainClassName = [project.group, 'Main'].join('.')
+    compatibilityVersion = JavaVersion.VERSION_1_5
 }
 
 sourceCompatibility = compatibilityVersion
