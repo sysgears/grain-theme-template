@@ -14,7 +14,19 @@ class ThemeTagLib {
     }
 
     /**
-     * Generates html tag for an image
+     * Converts a date to XML date time format.
+     *
+     * @attr date the date to convert
+     *
+     * @return XML date time representation of the date, for instance 2013-12-31T12:49:00+07:00
+     */
+    static def xmlDateTime = { Date date ->
+        def tz = String.format('%tz', date)
+        String.format("%tFT%<tT${tz.substring(0, 3)}:${tz.substring(3)}", date)
+    }
+
+    /**
+     * Generates html tag for an image.
      *
      * @attr location image location
      * @attr width (optional) image width

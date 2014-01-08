@@ -5,7 +5,7 @@
 %>
     <url>
         <loc>${site.url}${it.url}</loc>
-        <lastmod>${toXmlTime(it.updated)}</lastmod>
+        <lastmod>${xmlDateTime(it.updated)}</lastmod>
     </url>
 <% } %>
 </urlset>
