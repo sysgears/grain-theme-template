@@ -55,6 +55,10 @@ destination_dir = "${base_dir}/target"
 
 excludes = ['/sass/.*', '/src/.*', '/target/.*']
 
+//Embedded code configuration
+code_enabled_files = ['html', 'md', 'markdown', 'xml', 'css', 'rst']
+code_allowed_files = ['txt', 'js', 'rb']
+
 // Deployment settings.
 s3_bucket = '' // your S3 bucket name
 deploy = "s3cmd sync --acl-public --reduced-redundancy ${destination_dir}/ s3://${s3_bucket}/"
