@@ -1,4 +1,5 @@
 import com.example.site.ResourceMapper
+import com.example.site.deploy.GHPagesDeployer
 import com.example.site.taglib.ThemeTagLib
 
 environments {
@@ -61,7 +62,10 @@ code_allowed_files = ['txt', 'js', 'rb']
 
 // Deployment settings.
 s3_bucket = '' // your S3 bucket name
-deploy = "s3cmd sync --acl-public --reduced-redundancy ${destination_dir}/ s3://${s3_bucket}/"
+deploy_s3 = "s3cmd sync --acl-public --reduced-redundancy ${destination_dir}/ s3://${s3_bucket}/"
+
+gh_pages_url = '' // path to GitHub repository in format git@github.com:{username}/{repo}.git
+deploy = new GHPagesDeployer(site).deploy
 
 // Custom commands-line commands.
 commands = [
