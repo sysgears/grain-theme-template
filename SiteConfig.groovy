@@ -69,17 +69,14 @@ deploy = new GHPagesDeployer(site).deploy
 
 // Custom commands-line commands.
 commands = [
-/**
+/*
  * Creates new page.
  *
- * location - relative path to the new page or to the directory to save a new page to, should start with the /, i.e.
- *            /pages/page.md. If contains file extension, command will attempt to create file as specified in this
- *            variable, otherwise command will create index.markdown file in the specified directory
+ * location - relative path to the new page, should start with the /, i.e. /pages/index.html.
  * pageTitle - new page title
  */
 'create-page': { String location, String pageTitle ->
-        def ext = new File(location).extension
-        def file = ext ? file = new File(content_dir, location) : new File(content_dir + location, 'index.markdown')
+        file = new File(content_dir, location)
         file.parentFile.mkdirs()
         file.exists() || file.write("""---
 layout: default
