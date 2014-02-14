@@ -1,6 +1,6 @@
-import com.example.site.ResourceMapper
-import com.example.site.deploy.GHPagesDeployer
-import com.example.site.taglib.ThemeTagLib
+import com.sysgears.theme.ResourceMapper
+import com.sysgears.theme.deploy.GHPagesDeployer
+import com.sysgears.theme.taglib.ThemeTagLib
 
 environments {
     dev {

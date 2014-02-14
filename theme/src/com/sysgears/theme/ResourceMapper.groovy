@@ -1,4 +1,4 @@
-package com.example.site
+package com.sysgears.theme
 
 import com.sysgears.grain.taglib.Site
 
