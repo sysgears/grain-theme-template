@@ -15,7 +15,7 @@ published: true
 <ul>
 <% site.pages.each { %>
   <li>
-    <p><strong>url:</strong> <a href="${it.url}">${site.url}${it.url}</a> <strong>location:</strong> ${it.location}</p>
+    <p><strong>url:</strong> <a href="${link it.url}">${site.url}${it.url}</a> <strong>location:</strong> ${it.location}</p>
   </li>
 <% } %>
 </ul>
