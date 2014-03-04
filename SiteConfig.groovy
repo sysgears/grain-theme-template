@@ -2,6 +2,15 @@ import com.sysgears.theme.ResourceMapper
 import com.sysgears.theme.deploy.GHPagesDeployer
 import com.sysgears.theme.taglib.ThemeTagLib
 
+// Resource mapper and tag libs.
+resource_mapper = new ResourceMapper(site).map
+tag_libs = [ThemeTagLib]
+
+features {
+    highlight = 'pygments' // 'none', 'pygments'
+    markdown = 'txtmark'   // 'txtmark', 'pegdown'
+}
+
 environments {
     dev {
         log.info 'Development environment is used'
@@ -27,17 +36,17 @@ environments {
     }
 }
 
-// Features configuration.
-features {
-    compass = 'auto'             // 'none', 'ruby', 'jruby', 'shell', 'auto'
-    highlight = 'pygments'       // 'none', 'pygments'
-    // pygments = 'auto'         // 'none', 'python', 'jython', 'shell', 'auto'
-    // cache_highlight = 'true'  // default to 'true'
+python {
+    //interpreter = 'auto' // 'auto', 'python', 'jython'
+    //cmd_candidates = ['python2', 'python', 'python2.7']
+    //setup_tools = '2.1'
 }
 
-// Resource mapper and tag libs.
-resource_mapper = new ResourceMapper(site).map
-tag_libs = [ThemeTagLib]
+ruby {
+    //interpreter = 'auto'   // 'auto', 'ruby', 'jruby'
+    //cmd_candidates = ['ruby', 'ruby1.8.7', 'ruby1.9.3', 'user.home/.rvm/bin/ruby']
+    //ruby_gems = '2.2.2'
+}
 
 // Deployment settings.
 s3_bucket = '' // your S3 bucket name
