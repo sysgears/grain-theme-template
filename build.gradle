@@ -90,10 +90,12 @@ task generate(type: JavaExec) {
     classpath sourceSets.main.runtimeClasspath
     main = mainClassName
     args name
+    jvmArgs = ['-XX:PermSize=32m', '-XX:MaxPermSize=256m']
 }
 
 task preview(type: JavaExec) {
     classpath sourceSets.main.runtimeClasspath
     main = mainClassName
     args name
+    jvmArgs = ['-XX:PermSize=32m', '-XX:MaxPermSize=256m']
 }

@@ -9,6 +9,10 @@ tag_libs = [ThemeTagLib]
 features {
     highlight = 'pygments' // 'none', 'pygments'
     markdown = 'txtmark'   // 'txtmark', 'pegdown'
+    asciidoc {
+        opts = ['source-highlighter': 'coderay',
+                'icons': 'font']
+    }
 }
 
 environments {
