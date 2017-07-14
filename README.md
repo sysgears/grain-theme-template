@@ -3,6 +3,8 @@
 Grain Theme Template
 ====================
 
+[![Twitter Follow](https://img.shields.io/twitter/follow/sysgears.svg?style=social)](https://twitter.com/sysgears)
+
 The theme template is a starting point for creating new Grain themes. It provides all the necessary source and
 configuration files to help Groovy developers to build Grain themes from scratch.
 
